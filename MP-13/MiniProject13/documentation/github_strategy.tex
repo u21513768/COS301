@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{GitHub Strategy}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Stable Branch}
+The stable branch is a long-lived branch in the Git repository that contains the latest stable and production-ready version of the software. Once development is completed and all tests from unit test to end-to-end tests have been completed and passed, all the code from the working branch will be pushed to the stable branch to indicate that the project has been completed successfully.
+
+\section{Working Branch}
+The working branch is a temporary branch created by developers to work on specific features, bug fixes, or enhancements. Code and features will only be pushed to this branch when deemed completed and bug-free. This branch should only have features that have passed all their unit tests as this branch is going to be pulled from consistently by other developers who need to be up-to-date with the working branch before pushing the features they were working on.
+
+\section{Workflows}
+Workflows are automated processes or pipelines set up using GitHub Actions or similar CI/CD tools to streamline software development and deployment. Workflows automate tasks such as building, testing, deploying, and releasing software.
+\subsection{Auto Deploy}
+Auto deploy workflow automatically deploys the application to a staging or production environment whenever changes are pushed to specific branches, such as the stable branch or feature branches that have passed tests.
+\subsection{Auto Merge}
+Auto merge workflow automatically merges approved pull requests into designated branches, such as the stable branch, once all required checks and tests have passed.
+\subsection{Auto Release}
+Auto release workflow automatically creates and publishes new releases of the software based on specific triggers, such as the completion of a successful deployment or the merging of changes into the stable branch.
+\subsection{Build}
+Build workflow compiles the source code, runs unit tests, and generates artifacts or binaries required for deployment. It ensures that the software builds successfully and passes basic tests before further deployment or release.
+\subsection{Codecov}
+Codecov workflow integrates with a code coverage tool to measure the percentage of code covered by automated tests. It provides insights into the effectiveness of test suites and helps identify areas of code that need additional testing.
+\subsection{Deploy}
+Deploy workflow automates the deployment of the application to staging, testing, or production environments. It may involve tasks such as copying files to servers, configuring infrastructure, and starting or restarting services.
+\subsection{Merge}
+Merge workflow automates the process of merging changes from feature branches into the stable branch or other designated branches. It ensures that merges are performed consistently and in accordance with defined rules or policies.
+\subsection{Release}
+Release workflow automates the process of creating and publishing new releases of the software. It may involve tagging the codebase, generating release notes, updating version numbers, and publishing artifacts to distribution channels.
+\subsection{Test}
+Test workflow runs automated tests, including unit tests, integration tests, and end-to-end tests, to verify the correctness and functionality of the software. It provides feedback to developers on the quality of their changes and helps prevent regressions.
+
+\section{Branching Strategy}
+\subsection{Use of Main/Branch Protection}
+Enable branch protection rules for the main branch to prevent direct pushes and enforce code reviews via pull requests.
+\subsection{Feature Branches}
+Create feature branches for each new feature or task, branching off from the main branch or development branch.
+\subsection{Branch Naming Convention}
+Adopt a consistent naming convention for branches, such as using prefixes (e.g., feature/, bugfix/, hotfix/) followed by a descriptive name.
+\subsection{Merge Strategy}
+Use merge strategies such as merge commits or rebase and merge based on team preferences and project requirements.
+\subsection{Delete Stale Branches}
+Regularly delete feature branches after they have been merged into the main branch to keep the repository clean and organized.
+
+\section{Commits}
+\subsection{Descriptive Commit Messages}
+Each commit message should be clear, concise, and descriptive, summarizing the changes made in the commit.
+\subsection{Atomic Commits}
+Each commit should represent a single logical change or feature, making it easier to understand and revert changes if necessary.
+\subsection{Use of Branch Prefixes}
+Prefix commit messages with the relevant feature or issue number, if applicable, to associate commits with specific tasks or user stories.
+
+\section{Pull Requests}
+\subsection{Code Reviews}
+All code changes must undergo code reviews by at least one other team member before merging into the main branch.
+\subsection{Clear Title and Description}
+PR titles and descriptions should provide context about the changes, including why the changes were made and any relevant background information.
+\subsection{Link to Issues}
+PRs should be linked to the corresponding issue or user story in the issue tracker to provide context and facilitate traceability.
+
+\section{Issues}
+\subsection{Clear and Specific Titles}
+Issue titles should be clear, specific, and descriptive, summarizing the problem or task being addressed.
+\subsection{Detailed Description}
+Issues should include a detailed description of the problem, task, or user story, including acceptance criteria and any relevant context or constraints.
+\subsection{Assignment and Labels}
+Assign issues to the appropriate team member and apply relevant labels (e.g., bug, enhancement, documentation) to categorize and prioritize tasks.
+\subsection{CI/CD Strategy and Deployment}
+\begin{itemize}
+    \item \textbf{Git repo}: \url{https://github.com/COS301-SE-2024/MiniProject13}
+    \item \textbf{Git branching strategy we are using}: Trunk based strategy, so this means that we have a main branch, a dev branch and feature branches only. So our dev branch receives rapid development as we integrate and merge feature branches into dev. This also means feature branches are very short
+    \item \subsection*{lived and does not result in us having a complicated branching strategy or having merge conflicts as often as these branches live very close to dev. This also allows us to release new features as soon as possible as branches are not deeply nested, thereby making our CI/CD pipeline more robust and active.}
+
+    \subsection*{During the implementation phase, we are not reviewing developers' code in depth as of yet as we are trying to add as many features as quickly as possible since we are trying to make a proof of concept or rather skeleton implementation. Once we are done with that, we shall go through our codebase once more and start to write the actual product. Here, our review process will involve at least 2 signees approving the PR before it can be merged. This is to ensure that multiple eyes may catch some errors. So status checks will have to pass first, namely, linting, testing, and deploying a preview build. Once that is done, a reviewer will look through the PR details and verify by looking at the code changed that the PR is indeed doing what it is claiming to do. The reviewer may ask the developer who submitted the PR to also reference any issues that this PR addresses, although our PR templates stipulate that they do so. Finally, the reviewer will navigate to the preview build page and confirm that the new feature or fix does indeed work. Then the PR can be merged, and the dev branch will create its own preview build.}
+    
+    \subsection*{Ideally this: \url{https://github.com/COS301-SE-2024/MiniProject13/blob/dev/.github/workflows/lint_test_coverage_build_deploy_release_merge_main.yml}}
+    
+    \begin{itemize}
+    \item \textbf{a)} We are deploying to Vercel: \url{mini-project13.vercel.app}
+    \item \textbf{b)} We are using GitHub actions to deploy. Our actions are defined to run when a PR to dev is created, thus creating a preview build and when a PR from dev to main is opened, thus creating a production build.
+    \item \textbf{c)} We plan to deploy once every week, usually on the weekends allowing us to deploy new features as quickly as possible. However, for the team, anytime a PR is created to the dev branch, a preview build is created, and this allows those who worked on their latest feature to get instant feedback from the rest of the team and use that feedback to iterate and improve their designs and overall usage of the web app.
+    \end{itemize}
+    
+    \end{document}
+\end{document}

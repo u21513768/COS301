@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+
+\title{COS301 Mini Project Group 13 Design Specification}
+\author{By Kyle Marshall, Project Designer}
+\date{13:33 on 20th March 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document serves as an outline of the design decisions taken to achieve the objective of engineering a clone application of the widely used and known social media network, Twitter (now called X). It is important to note that we have opted to base our UI on the older Twitter UI, solely based on the group’s preference. UI engineers and integration engineers alike can refer to this document to inform themselves on design specifics such as layouts, the colour palette, and component functionalities. 
+
+\section{Design Overview}
+The Twitter UI design which we will be cloning features sleek and intuitive components, easy-to-interpret icons and labels, and a colour-palette that is not only easy-on-the-eye but also widely recognized and synonymous with the social media network. Components are made modular such that code need not be duplicated and can be re-used across pages seamlessly. In fact, the Twitter UI somewhat visually illustrates this in its three-column component architecture. The left-hand side toolbar contains links to other pages (see Components), the central column, which occupies most of the screen space, contains the main content of the selected page and the right-hand column contains various social springboards. Each component is its own flexible, independent structure that is encapsulated and therefore easily transportable. Such is the design philosophy we have adopted, across the codebase. 
+
+\section{Components}
+\subsection{Sign Up Card}
+The sign-up card contains all elements and sub-components related to the process of creating a Twitter account. This includes several input fields such as email address/phone number, creating a password, selecting your birthday (to determine your age for safety reasons), verifying your email and setting up your profile.
+
+\subsection{Log In Card}
+The log-in card contains the elements related to logging into an existing Twitter account. The log-in credentials are the user’s phone number or email and their account’s password and as such there are fields for those two requirements.
+
+\subsection{Toolbar}
+The toolbar, situated on the left-hand side of the page when a user is logged in, gives a user quick access to the following pages:
+\begin{itemize}
+    \item Home
+    \item Explore
+    \item Notifications
+    \item Bookmarks
+    \item Profile
+    \item Settings
+\end{itemize}
+Importantly, it also has a Tweet button which of course allows the user to post a Tweet to their account.
+
+\subsection{Create-a-Tweet Card}
+The Create-a-Tweet Card provides the user with the input area for their post’s content. It facilitates text, images etc. It allows them to supply their post content and upload it to the social network. 
+
+\subsection{Tweet Card}
+The Tweet Card is the product of creating a Tweet using the previous component. It simply displays the content that the user posted and the profile information of that user, as well as statistics relating to the community’s engagement with the post. This includes likes, comments, reposts, and shares.
+
+\subsection{Expansion Sidebar}
+The Info-Hub Sidebar groups three distinct functionalities all directly related to expansion of some form. More specifically, knowledge expansion via the Search and News functionalities and social expansion via the Who to follow suggestions tab. Each does exactly what its name suggests. 
+
+\subsection{Profile Card}
+The Profile Card displays various information and content associated with and uploaded by the user. This includes a profile banner, a profile picture, a bio, their username and display name, their title (such as Artist, optional), their location, their date of joining Twitter, and their number of followers and people that they are following. It also contains an Edit Profile button which allows them to modify some of the fields relating to their profile such as their profile photo, bio etc.
+
+\subsection{Settings}
+The Settings section contains various subsections relating to the management of a user’s account, their preferences regarding interaction with the application, their privacy and security configurations.
+
+\section{Design Standards}
+\begin{itemize}
+    \item Simplicity and Minimalism – our focus is on delivering an interface that focuses on essential elements and avoids unnecessary clutter.
+    \item Typography – we make use of a typeface that is readable and recognizable. It is always well-sized to be readable.
+    \item Colour Palette – the colour palette is consistent throughout the application and synonymous with the brand.
+    \item Icons – the icons present in the application are intuitive and unambiguous, with a few of them also being unique to the Twitter brand.
+    \item Consistent Layout – the overall layout remains consistent regardless of which view the user is engaging with.
+\end{itemize}
+
+\section{Frameworks and Libraries}
+\begin{itemize}
+    \item React Framework – the application is built on the React framework to create user interfaces and manage the state.
+    \item NextUI Component Library – NextUI provides pre-built and -designed components that alleviate the need to manually create them, saving development time.
+    \item Tailwind CSS – used to style and manage the design of the application by allowing developers to create responsive and customizable designs through utility classes.
+    \item React’s Icon Library – provides a wide range of icons commonly used in web development, including Twitter’s.
+\end{itemize}
+
+\section{Colour Palette}
+\subsection{Light}
+\begin{itemize}
+    \item Celestial Blue: \#1DA1F2 - Used for links, buttons, and primary accents.
+    \item Pure White: \#FFFFFF - Used for backgrounds, cards, and contrasts.
+    \item French Gray: \#AAB8C2 - Used for backgrounds, borders, and subtle elements.
+    \item Slate Gray: \#657786 - Used for text, icons, and secondary elements.
+    \item Eerie Black: \#14171A - Used for text, icons, and borders in certain contexts.
+\end{itemize}
+
+\subsection{Dark}
+\begin{itemize}
+    \item Celestial Blue (slightly darker): \#1B95E0 - Used for links, buttons, and primary accents.
+    \item Celestial Blue: \#1DA1F2 - Used for highlights, active elements, and selected items.
+    \item French Gray: \#AAB8C2 - Used for backgrounds
+    \item Slate Gray: \#657786 - Used for text, icons, and secondary elements.
+    \item Rich Black: \#15202B - Used for background elements, such as the main background and panels.
+
+\section{Typography}
+    The application uses a set of typefaces to ensure readability and consistency across different platforms. The typefaces are used as follows:
+    
+\subsection{Default Typeface}
+\begin{itemize}
+    \item \textbf{Font-family:} -apple-system, BlinkMacSystemFont, Segoe UI, Roboto. The application first tries to use the font on Apple devices, then the system font of Blink-based browsers like Chrome, then Segoe UI, then Roboto, in that order.
+    \item \textbf{Segoe UI Regular:} Used for body text, such as paragraph content, descriptions, and smaller text blocks. Also used for labels, tooltips, small buttons.
+    \item \textbf{Segoe UI Medium:} Used for headings, subheadings, section titles, and other prominent text elements. Also used for call-to-action buttons, links, and interactive elements.
+    \item \textbf{Segoe UI Bold:} Used for headers, titles, emphasis, and key phrases. Also used for alerts, error messages, warnings, and other critical information.
+\end{itemize}
+    
+\subsection{Fallback Typeface}
+    Roboto and its regular, medium, and bold variants have been identified as the fallback typeface.
+\section{Assets, Images, and URLs}
+    The following resources are used in the application:
+    
+\begin{itemize}
+    \item Figma Design: \url{https://www.figma.com/file/w0aRTpe5SPT38VwPLuGaFK/COS301-MP-13?type=design&node-id=333%3A2&mode=design&t=CowSn0BJK9uuhV0p-1}
+    \item React Icon Library: \url{https://react-icons.github.io/react-icons/}
+    \item React: \url{https://react.dev/}
+    \item NextUI: \url{https://nextui.org/}
+    \item TailWind CSS: \url{https://tailwindcss.com/}
+    \item Coolors (Colour Palettes): \url{https://coolors.co/}
+    \item Twitter (Now X): \url{https://twitter.com/}
+\end{itemize}
+\end{document}

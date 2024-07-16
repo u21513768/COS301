@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{System Architectural Design}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+According to our Architect (Dhinaz Rangasamy), he was originally thinking about Model View Controller, but he wanted to find something that would fit in better with the Client Side Architecture instead. He found something called API Gateway that could serve as a centralized entry point for managing, routing, and securing API traffic in a distributed system architecture. The point is that we provide the client side with a single entry point to a multitude of microservices; in our case, we want a single endpoint to the microservices on Supabase.
+
+\section{Network Architecture Utilized}
+\subsection{Client/Server Architecture (two-tier architecture)}
+This is a software architecture model that divides an application into two separate components, those components being the client and the server. Each component has its own distinct responsibilities while they interact with each other to fulfill the requirements of the application.
+\subsubsection{Client}
+This component is the user-facing part of the application and is responsible for interacting with the users and presenting information to them. Running on the users’ device and includes a user interface that allows users to enter data and interact with the application.
+\subsubsection{Server}
+This is the backend component of the application, its main responsibility if processing requests from clients, executing the business logic while managing data. It will run on a remote server or cloud infrastructure which typically includes software components such as web servers, application servers, and databases.
+
+\section{Type of web application utilized}
+\subsection{Single Page Application}
+This type of web application or website will operate within a single HTML page. Different from traditional web applications which typically navigate between multiple pages, an SPA will dynamically update the content of the page based on the user’s interaction without the need to reload the full page.
+\subsubsection{Key Characteristics of SPAs}
+\begin{itemize}
+    \item \textbf{Single HTML Page:} This single HTML page will be served as the container for the entire web application. It will be initially loaded into the browser and remain static throughout the user’s interaction with the application.
+    \item \textbf{Dynamic Content Rendering:} Due to the utilization of JavaScript frameworks such as Angular, React, or Vue, there will be dynamically updated content on the page in response to the user’s actions. These actions are clicking on links, submitting forms, or interacting with controls. This gives a fluid and seamless experience to the user without the need for page reloads.
+    \item \textbf{Client-Side Routing:} Implementation of client-side routing means that the applications routing logic is handled by JavaScript running in the browsers rather than by the servers. This ensures that the application responds to URL changes and renders the right content without making any additional requests to the server.
+    \item \textbf{RESTful APIs:} The use of Representational State Transfer APIs allows there to be communication with the server while exchanging data in JSON format. Due to this, there will be decoupling between the client-side and server-side components of the application.
+    \item \textbf{Asynchronous Loading:} With the use of SPAs, there will be resources loaded such as JavaScript files, CSS stylesheets, and data asynchronously to minimize page load times and improve performance. This is accomplished by lazy loading, where resources are loaded on-demand as needed.
+    \item \textbf{Browser History Manipulation:} With the use of SPAs, there will be browser’s History API to manipulate the browser history and enable features like forward and backward navigation within the application without triggering a full page reload. This will mean users experience a more native app.
+\end{itemize}
+
+\section{Software Architecture}
+\subsection{API Gateway}
+This is a server or service that acts as an intermediary between clients (such as web or mobile applications) and backend services (such as microservices, databases, or legacy systems) in a distributed system architecture. It serves as a single entry point for all client requests and provides various functionalities to manage, route, and secure API traffic. It abstracts away the complexities of backend services, simplifies client interactions, and provides essential functionalities for ensuring reliability, security, and scalability of API-based applications.
+\subsubsection{Key Components and functionality of an API Gateway}
+\begin{itemize}
+    \item \textbf{API Routing and Composition:} The API Gateway routes incoming requests from clients to the appropriate backend services based on predefined rules and configurations. It may support dynamic routing, allowing requests to be routed based on criteria such as HTTP methods, URL paths, headers, or query parameters. The API Gateway can also aggregate or compose multiple backend API calls into a single response, reducing latency and simplifying client interactions.
+    \item \textbf{Protocol Translation:} The API Gateway can handle protocol translation, allowing clients to communicate using different protocols (such as HTTP, WebSocket, or gRPC) than those supported by the backend services. It may translate requests and responses between different protocols to ensure compatibility and interoperability between clients and backend systems.
+    \item \textbf{Request and Response Transformation:} The API Gateway can modify or transform incoming requests or outgoing responses to meet the requirements of clients or backend services. It may perform tasks such as request/response body manipulation, header modification, data format conversion (e.g., JSON to XML), or payload encryption/decryption.
+    \item \textbf{Security and Authentication:} The API Gateway enforces security policies and authentication mechanisms to protect API endpoints from unauthorized access and attacks. It may support authentication methods such as API keys, OAuth, JWT tokens, or custom authentication schemes, verifying the identity of clients before allowing access to backend services.
+    \item \textbf{Rate Limiting and Throttling:} The API Gateway can enforce rate limiting and request throttling policies to prevent abuse, mitigate Denial of Service (DoS) attacks, and ensure fair usage of backend resources. It may restrict the number of requests per client or IP address, limit request rates over a specific time period, or apply dynamic throttling based on usage patterns.
+    \item \textbf{Logging and Monitoring:} The API Gateway logs detailed information about incoming requests, outgoing responses, and traffic patterns for monitoring, debugging, and auditing purposes. It may integrate with logging and monitoring tools to collect metrics, track performance, and detect anomalies in API traffic.
+    \item \textbf{Caching:} The API Gateway can cache responses from backend services to improve performance and reduce latency for frequently accessed data. It may cache responses at various levels (e.g., edge caching, CDN caching, or local caching) and invalidate cache entries based on cache expiration policies or cache control headers.
+    \item \textbf{Load Balancing and High Availability:} The API Gateway can distribute incoming requests across multiple instances of backend services to ensure scalability, fault tolerance, and high availability. It may support various load balancing algorithms (e.g., round-robin, least connections, or weighted distribution) to optimize resource utilization and distribute traffic evenly.
+\end{itemize}
+
+\section*{Quality Attributes and Architecture Strategies:}
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Performance:}
+    \begin{itemize}
+        \item Edge functions contribute to performance, for example, database querying functions will be optimized and used throughout the application, thus ensuring efficient functions are used consistently.
+        \item Service functions will be optimized to prevent any unnecessary transactions on the database.
+    \end{itemize}
+
+    \item \textbf{Scalability:}
+    \begin{itemize}
+        \item The usage of the reports feature can ensure that the backend can be prepared to handle any changes in traffic and usage.
+    \end{itemize}
+
+    \item \textbf{Reliability:}
+    \begin{itemize}
+        \item The backend can be monitored, using the report feature, to ensure that component and service usage is within a safe range, and that the system will not allow any further action if it could be compromised.
+    \end{itemize}
+
+    \item \textbf{Security:}
+    \begin{itemize}
+        \item Authorization IDs will be used to verify user sessions before data can be retrieved.
+    \end{itemize}
+
+    \item \textbf{Usability:}
+    \begin{itemize}
+        \item Features will be grouped by pages ensuring the navigation follows a logical flow.
+        \item Users will be able to customize the interface and level of interaction with the app.
+    \end{itemize}
+
+    \item \textbf{Availability:}
+    \begin{itemize}
+        \item User sessions will be cached to ensure that users are able to return to their session within a reasonable time window.
+        \item The use of asynchronous functionality will ensure that the user experience is not halted.
+    \end{itemize}
+
+    \item \textbf{Maintainability:}
+    \begin{itemize}
+        \item Each edge function will be planned, written, and tested, and then used across multiple pages. This ensures code reusability and simplifies the task of maintainability.
+        \item The use of a linter will ensure that coding standards are adhered to.
+    \end{itemize}
+
+    \item \textbf{Extensibility:}
+    \begin{itemize}
+        \item The use of services provides a single entry point for changes to be made to accommodate new features and updates.
+        \item Databases can be updated on Supabase to cater for new attributes, functionality (edge functions and services) can be updated accordingly along with the tables.
+    \end{itemize}
+
+    \item \textbf{Cost-effectiveness:}
+    \begin{itemize}
+        \item The use of edge functions which can individually be used for a multitude of tasks contribute to cost-effectiveness by reducing the number of functions that will need to be stored, tested, and deployed.
+    \end{itemize}
+\end{enumerate}
+\end{document}

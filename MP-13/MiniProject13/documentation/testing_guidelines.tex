@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section{End-to-End Testing with Cypress}
+
+\subsection{Test Planning:}
+\begin{enumerate}[label=\arabic*.]
+    \item Define the scope of the E2E tests, including the features and functionalities to be tested.
+    \item Identify the user flows and scenarios to be covered by the tests.
+    \item Determine the environments (e.g., development, staging, production) where the tests will be executed.
+\end{enumerate}
+
+\subsection{Test Design:}
+\begin{enumerate}[label=\arabic*.]
+    \item Write test cases for each user flow, starting from the initial interaction to the expected outcome.
+    \item Design test scenarios that cover both positive and negative scenarios, including edge cases and error conditions.
+    \item Use Cypress commands to interact with the application UI elements, such as clicking buttons, entering text, and verifying elements.
+\end{enumerate}
+
+\subsection{Test Execution:}
+\begin{enumerate}[label=\arabic*.]
+    \item Set up Cypress environment and configure test runner.
+    \item Run the E2E tests against the application, either locally or on a test server.
+    \item Monitor test execution and analyze test results for any failures or errors.
+    \item Debug failing tests by reviewing logs, screenshots, and videos captured during test execution.
+    \item Refine test cases and re-run tests as needed to ensure reliability and accuracy.
+\end{enumerate}
+
+\subsection{Results Analysis:}
+\begin{enumerate}[label=\arabic*.]
+    \item Review test results to identify any failures, errors, or unexpected behavior.
+    \item Analyze the root cause of failures and determine if they are due to issues in the application code or test scripts.
+    \item Prioritize and triage issues based on severity and impact on the application.
+    \item Communicate findings with the development team and stakeholders to facilitate resolution and mitigation of issues.
+\end{enumerate}
+
+\subsection{Types of End-to-End Testing:}
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Horizontal E2E Test:} Focuses on validating the application from the end user's perspective, covering complete user journeys and interactions.
+    \item \textbf{Vertical E2E Test:} Focuses on testing specific layers or components of the application stack, such as API endpoints, database interactions, and backend services.
+\end{enumerate}
+
+\subsection{Cypress (UI-testing and E2E testing):}
+\begin{enumerate}[label=\arabic*.]
+    \item Cypress is a powerful testing framework for conducting both UI testing and end-to-end testing of web applications.
+    \item It provides a rich set of commands and assertions for interacting with web elements and validating application behavior.
+    \item Cypress offers features like automatic waiting, real-time reloading, and built-in test runner for efficient test development and execution.
+\end{enumerate}
+
+\subsection{Unit Tests:}
+\begin{enumerate}[label=\arabic*.]
+    \item Unit testing involves testing individual units of code, such as functions, methods, and classes, in isolation from the rest of the application.
+    \item It focuses on validating the correctness, robustness, and reliability of the code at a granular level.
+    \item Unit tests help identify defects early in the development process and improve code quality and maintainability.
+\end{enumerate}
+
+\subsection{Logic Checks:}
+\begin{enumerate}[label=\arabic*.]
+    \item Logic checks involve verifying the correctness of logical operations and algorithms within individual units of code.
+    \item Unit tests for logic checks assess whether the code produces the expected output for different input scenarios and edge cases.
+\end{enumerate}
+
+\subsection{Boundary Checks:}
+\begin{enumerate}[label=\arabic*.]
+    \item Boundary checks focus on testing the behavior of code at the boundaries of acceptable input values or conditions.
+    \item Unit tests for boundary checks assess how the code handles edge cases and boundary conditions to ensure robustness and reliability.
+\end{enumerate}
+
+\subsection{Error Handling:}
+\begin{enumerate}[label=\arabic*.]
+    \item Error handling tests evaluate the effectiveness of error detection and recovery mechanisms within units of code.
+    \item Unit tests for error handling assess whether the code correctly identifies and handles exceptions, maintains system integrity, and prevents data corruption.
+\end{enumerate}
+
+\subsection{Object-oriented Checks:}
+\begin{enumerate}[label=\arabic*.]
+    \item Object-oriented checks focus on verifying the behavior of classes, methods, and objects within an object-oriented software system.
+    \item Unit tests for object-oriented checks assess whether classes and objects adhere to object-oriented design principles and maintain state and behavior as intended.
+\end{enumerate}
+
+\subsection{Vitest (Functional, Unit, and Integration Testing):}
+\begin{enumerate}[label=\arabic*.]
+    \item Vitest is a comprehensive testing framework that combines functional, unit, and integration testing methodologies.
+    \item It provides a unified approach to testing software systems, covering a wide range of testing scenarios and use cases.
+    \item Vitest helps ensure the quality, reliability, and performance of software applications across different layers and components.
+\end{enumerate}
+\subsection*{Jest (Unit Testing):}
+\begin{enumerate}[label=\arabic*.]
+    \item Jest is a popular JavaScript testing framework that specializes in unit testing of JavaScript code.
+    \item It provides a simple and intuitive API for writing test cases, running tests, and generating test reports.
+    \item Jest offers features like snapshot testing, mocking, and code coverage analysis to enhance the quality and effectiveness of unit tests.
+    \item All unit testing will be done in Jest. 
+    \item Jest is a zero-configuration testing platform that can be used to test any JavaScript code.
+    \item Advantages of Jest are: provides CLI tool to control tests with ease, provides syntax to test a single test or to skip tests, provides a way to run tests in parallel, and provides a way to run tests in watch mode and it offers code coverage through CLI.
+    \item One of the main features are Snapshots which are key for frontend testing as they allow the tester to verify the integrity of large objects. It is a way to test the output of a component and compare it to a saved snapshot.
+
+\end{document}

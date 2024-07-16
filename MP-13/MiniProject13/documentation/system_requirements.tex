@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\title{System Requirements}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Objective of the System}
+The overarching aim of the Twitter (hereafter referred to as X) Clone project is to meticulously replicate the functionality and user experience of the esteemed social media platform, Twitter. Through this endeavor, users will be empowered to engage in a familiar online environment, equipped with essential features synonymous with Twitter’s interface.
+
+At its core, the X Clone project endeavors to facilitate seamless interaction for users, enabling them to compose and share tweets, follow other users, and engage in conversations within the platform’s ecosystem. Moreover, akin to Twitter’s framework, users will have the capacity to create personalized profiles, manage account settings, and curate their timeline according to their preferences.
+
+Furthermore, the project aspires to ensure robust security measures and user privacy safeguards, aligning with contemporary standards in data protection and online security practices. This commitment underscores the project’s dedication to fostering trust and confidence among its user bases.
+
+In essence, the X Clone project seeks to offer a comprehensive emulation of Twitter’s functionality, coupled with enhancements aimed at refining the user experience and addressing evolving user needs. Through meticulous attention to detail and a commitment to excellence, the project endeavors to establish itself as a credible alternative while providing users with a seamless transition and an enriched social media experience.
+
+\section{User Identification}
+\subsection{Third-Party or Public Users}
+Third-Party Users or public users are individuals that will utilize/interact with the application/platform for personal reasons. They are not directly affiliated with the platform, nor do they have a direct registration (Twitter Blue/Premium Accounts) with the platform. They will access the platform’s content or features without having an account or official relationship. Twitter Example: These can be people who will browse through tweets, read news articles posted on the platform. They can engage with the content that is public to view without creating/having an account. Thus, they can view the public information that the platform distributes but cannot contribute to the platform.
+
+\subsection{Registrar Users}
+These are individuals or entities who register and maintain accounts on a platform or service. They will have direct access to the platform’s features and can create content, engage with other users, and personalize their experience through account settings. Twitter Example: These are users that will create accounts using their email addresses or phone numbers. Once they have created their accounts they can create and post their tweets, follow other users, customize their profile, and engage in conversations with other users on the platform.
+
+\subsection{Registry Users}
+These Registry Users are entities listed within the platform’s registry or directory. These users will either have verified accounts, associated with business or organizations and might be public figures. They have authenticated by the platform and will often have special privileges or features, such verified badges and access to additional tools. Twitter Example: Registry Users will often be individuals that have verified accounts, such as celebrities, politicians, brands, and prominent figures. Twitter will confirm these user’s identities through their verification system and grant them their verification badge next to their name for increased visibility on the platform.
+
+\section{Functional Requirements}
+\subsection{User Registration and Authentication}
+\begin{itemize}[label=$\bullet$]
+    \item The system shall allow users to register for an account by providing a valid email address, username, and password.
+    \item The system shall authenticate users upon login using valid credentials and grant access to their personalized profiles and features.
+\end{itemize}
+
+\subsection{Posting and Sharing Content}
+\begin{itemize}[label=$\bullet$]
+    \item Users shall be able to create, edit, and delete posts (tweets) containing text, images, videos, or links.
+    \item Users shall have the option to share posts publicly with all users or restrict visibility to specific followers or groups.
+\end{itemize}
+
+\subsection{Interacting with Content}
+\begin{itemize}[label=$\bullet$]
+    \item User shall have the ability to like, leave comments on, and reply to posts from other users.
+    \item The system will display interactions such as likes, comments, and retweets on post in real-time to users’ timelines.
+\end{itemize}
+
+\subsection{Profile Management}
+\begin{itemize}[label=$\bullet$]
+    \item Users shall be able to customize their profiles by adding a profile picture, header image, bio, location, website link, and other personal information.
+    \item Users shall have the ability to edit their profile settings, including privacy settings, notification preferences, and account security options.
+\end{itemize}
+
+\subsection{Search and Discovery}
+\begin{itemize}[label=$\bullet$]
+    \item The system shall provide a search functionality allowing users to find other users, posts, hashtags, or topics of interest.
+    \item Users shall be able to discover trending topics, hashtags, and popular accounts based on their interests and engagement.
+\end{itemize}
+
+\subsection{Notification and Messaging}
+\begin{itemize}[label=$\bullet$]
+    \item The system shall send notifications to users for relevant activities such as new followers, likes, comments, mentions, and direct messages.
+    \item Users shall be able to send direct messages (DMs) to other users privately for one-on-one conversations or group chats.
+\end{itemize}
+
+\subsection{Content Moderation and Reporting}
+\begin{itemize}[label=$\bullet$]
+    \item The system shall include moderation features to detect and remove inappropriate or abusive content, such as hate speech, harassment, or spam.
+    \item Users shall have the ability to report posts or users for violating community guidelines, prompting review and action by moderators or administrators.
+\end{itemize}
+
+\subsection{Analytics and Insights}
+\begin{itemize}[label=$\bullet$]
+    \item The system shall provide users with analytics and insights about their account activity, including follower growth, engagement metrics, and popular posts.
+    \item Administrators shall have access to broader analytics for monitoring overall platform performance, user behavior trends, and system usage patterns.
+\end{itemize}
+
+\section{Subsystems}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{User Authentication and Authorization System}: This subsystem manages user accounts, authentication processes (such as login and password management), and authorization levels (determining what actions each user can perform).
+    \item \textbf{Tweet Management System}: Responsible for creating, storing, and retrieving tweets. This subsystem handles the creation of new tweets, retweets, replies, and the organization of tweets into timelines.
+    \item \textbf{User Profile System}: Manages user profiles, including profile information, settings, preferences, and customization options. It also handles user interactions such as follows, mentions, and direct messages.
+    \item \textbf{Timeline Generation and Recommendation System}: Generates personalized timelines for users based on their preferences, interests, and social connections. It may also include recommendation algorithms to suggest new accounts to follow or trending topics to explore.
+    \item \textbf{Notification System}: Notifies users about relevant activities, such as new followers, likes, retweets, mentions, or direct messages. This subsystem ensures users stay informed and engaged with their network.
+    \item \textbf{Search and Discovery System}: Enables users to search for specific content, hashtags, users, or topics of interest. It also provides discovery features to help users find new accounts to follow and trending conversations to join.
+    \item \textbf{Media Management System}: Handles the uploading, storage, and delivery of media content, such as images, videos, and GIFs, embedded within tweets.
+    \item \textbf{Analytics and Insights System}: Provides users, advertisers, and developers with analytics and insights about their Twitter activity, audience demographics, engagement metrics, and advertising performance.
+\end{itemize}
+
+\section{Use Case Diagrams}
+\section{Class Diagram}
+
+\section{Non-functional Requirements}
+\subsection{Performance}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Response Time}: The system shall respond to user interactions (e.g., posting tweets, loading timelines) within a maximum response time of X seconds to ensure a responsive user experience.
+    \item \textbf{Throughput}: The system shall support a minimum number of concurrent users or requests, ensuring high performance and scalability during peak usage periods.
+\end{itemize}
+
+\subsection{Reliability}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Availability}: The system shall maintain an uptime of at least 99.9\% to ensure continuous availability and accessibility for users.
+    \item \textbf{Fault Tolerance}: The system shall be resilient to failures and errors, with mechanisms in place to recover gracefully and minimize disruption to users.
+\end{itemize}
+
+\subsection{Security}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Authentication and Authorization}: The system shall enforce robust authentication and authorization mechanisms to ensure that only authorized users can access and modify sensitive data or functionalities.
+    \item \textbf{Data Encryption}: The system shall encrypt sensitive user data (e.g., passwords, personal information) to protect against unauthorized access or data breaches.
+\end{itemize}
+
+\subsection{Usability}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{User Interface Design}: The system shall have an intuitive and user-friendly interface, with clear navigation, consistent design patterns, and accessibility features to accommodate users with diverse needs.
+\end{itemize}
+
+\subsection{Maintainability}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Code Maintainability}: The system shall use modular and well-documented code architecture, adhering to coding standards and best practices to facilitate ease of maintenance and future enhancements.
+    \item \textbf{Documentation}: The system shall include comprehensive documentation covering system architecture, design decisions, APIs, and deployment procedures to aid developers and administrators in managing and troubleshooting the system.
+\end{itemize}
+
+\subsection{Compliance}
+\begin{itemize}[label=$\bullet$]
+    \item \textbf{Ethical Considerations}: The system shall adhere to ethical guidelines and principles, promoting transparency, fairness, and responsible use of user data and content.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section*{1. Project Overview}
+\textbf{Project Description:} The Twitter clone project aims to create a social media platform where users can share short messages, follow other users, and engage with content through likes and comments. \\
+\textbf{Database Purpose:} The database serves as the backend storage for user accounts, tweets, user interactions, and other related data. \\
+\textbf{Stakeholders:} Developers, Product Managers, Designers, Users
+
+\section*{2. Database Management System (DBMS)}
+\textbf{DBMS:} PostgreSQL Version 16.2 (Supabase)
+
+\section*{3. Database Schema}
+\textbf{Schema Structure:} Follows a relational database model \\
+\textbf{Tables and Views:}
+\begin{itemize}[label=--]
+    \item Users
+    \item Tweets
+    \item Likes
+    \item Comments
+    \item Followers
+    \item Notifications
+    \item Retweets
+    \item Notification\_Types
+    \item Saves
+    \item Profile
+    \item Tags
+\end{itemize}
+
+\section*{4. Entities and Attributes}
+\textbf{Comments:} This table stores comments made by users on tweets.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each comment.
+    \item tweet id: Foreign key referencing the tweet on which the comment was made.
+    \item user id: Foreign key referencing the user who posted the comment.
+    \item content: Text content of the comment.
+    \item created at: Timestamp indicating when the comment was posted.
+\end{itemize}
+\textbf{Followers:} This table stores the relationships between users who follow each other.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each follower relationship.
+    \item follower id: Foreign key referencing the user who is following.
+    \item following id: Foreign key referencing the user who is being followed.
+    \item created at: Timestamp indicating when the following relationship was established.
+\end{itemize}
+\textbf{Likes:} This table stores the likes given by users to tweets.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each like.
+    \item tweet id: Foreign key referencing the tweet that was liked.
+    \item user id: Foreign key referencing the user who liked the tweet.
+    \item created at: Timestamp indicating when the like was given.
+\end{itemize}
+\textbf{Notification Types:} This table stores different types of notifications.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each notification type.
+    \item name: Name or description of the notification type.
+\end{itemize}
+\textbf{Notifications:} This table stores notifications sent to users.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each notification.
+    \item user id: Foreign key referencing the user who received the notification.
+    \item type id: Foreign key referencing the type of notification.
+    \item content: Text content of the notification.
+    \item created at: Timestamp indicating when the notification was sent.
+\end{itemize}
+\textbf{Profile:} This table stores user profiles.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each user profile.
+    \item user id: Foreign key referencing the user.
+    \item bio: Biography or description of the user.
+    \item location: Location of the user.
+    \item website: Website URL of the user.
+    \item created at: Timestamp indicating when the profile was created.
+\end{itemize}
+\textbf{Retweets:} This table stores retweets made by users.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each retweet.
+    \item tweet id: Foreign key referencing the original tweet being retweeted.
+    \item user id: Foreign key referencing the user who retweeted the tweet.
+    \item created at: Timestamp indicating when the retweet was made.
+\end{itemize}
+\textbf{Saves:} This table stores saved tweets by users.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each saved tweet.
+    \item tweet id: Foreign key referencing the tweet being saved.
+    \item user id: Foreign key referencing the user who saved the tweet.
+    \item created at: Timestamp indicating when the tweet was saved.
+\end{itemize}
+\textbf{Tweets:} This table stores individual tweets posted by users.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each tweet.
+    \item user id: Foreign key referencing the user who posted the tweet.
+    \item imgUrl: URL link that references the image that's attached to the tweet.
+    \item likeCount: Number of likes the tweet received.
+    \item retweetCount: Number of retweets the tweet received.
+    \item tag: Other users that have been mentioned in the tweet.
+    \item content: Text content of the tweet.
+    \item created at: Timestamp indicating when the tweet was posted.
+\end{itemize}
+\textbf{User:} This table stores user accounts.
+\begin{itemize}[label=--]
+    \item id: Unique identifier for each user.
+    \item username: Username chosen by the user (unique).
+    \item email: Email address of the user (unique).
+    \item password: Encrypted password of the user.
+    \item created at: Timestamp indicating when the user account was created.
+\end{itemize}
+
+\section*{10. Backup and Recovery}
+\textbf{Backup Strategy:} Regular backups scheduled via Supabase \\
+\textbf{Recovery Procedures:} Restore from backups in case of data loss or corruption
+
+\section*{11. Scaling and Performance}
+\textbf{Scaling:} Horizontal scaling with Supabase's auto-scaling capabilities \\
+\textbf{Performance Tuning:} Index optimization and query optimization for better performance
+
+\section*{12. Data Migration and Integration}
+\textbf{Data Migration:} Import existing user data if applicable \\
+\textbf{Integrations:} Integration with third-party services such as Google and GitHub for authentication.
+
+\section*{13. Data Retention and Archiving}
+\textbf{Retention Policies:} Retain user data as long as the account exists \\
+\textbf{Archiving:} Archive inactive accounts or delete upon user request
+
+\section*{14. Documentation and Maintenance}
+\textbf{Maintenance Procedures:} Regular database schema updates and maintenance \\
+\textbf{Documentation:} Keep database schema documentation up-to-date
+
+\section*{15. Dependencies}
+\textbf{External Dependencies:} Supabase SDK for database interactions
+
+\section*{16. Testing and Quality Assurance}
+\textbf{Testing Procedures:}
+\begin{itemize}[label=--]
+    \item Unit tests for database functions and procedures
+    \item Integration tests for database interactions
+\end{itemize}
+
+\section*{17. References}
+\textbf{Supabase Documentation:} \url{https://supabase.com/docs} \\
+\textbf{Supabase Database Documentation:} \url{https://supabase.com/docs/guides/database/overview}
+
+\end{document}
+

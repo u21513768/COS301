@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Coding Development Guidelines}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Frontend}
+\subsection{Naming Conventions}
+\begin{itemize}
+    \item Utilize appropriate naming conventions that are readable and promote clean code.
+    \item Names of functions should describe the purpose of said function.
+    \item When naming components, ensure that they are in Pascal case like SelectButton, Dashboard. This ensures that components differ from default JSX element tags.
+    \item Functions defined inside components should be in Camel case, for example, getApplicationData(), hideText.
+    \item Constant fields that are set globally should be in capital letters only. For example, const PI = "3.14".
+\end{itemize}
+
+\subsection{Comments}
+\begin{itemize}
+    \item During the development of the software application, utilize comments to explain the functionality of methods/functions. This will ensure that when collaborating with other team members, each member working will understand.
+    \item After testing is completed and functions (with comments) have passed all tests, comments are to be removed. Ensure that all console.log and any debugging code has been removed as well.
+    \item Comments should be concise and to the point. They should explain the purpose of the code and not what the code is doing.
+    \item Comments should be used to explain complex logic or algorithms. They should not be used to explain simple code that is self-explanatory.
+    \item Comments should be used to explain the intent of the code. They should not be used to explain the implementation details.
+    \item Comments should be used to explain the purpose of the code. They should not be used to explain the history of the code.
+    \item Comments should be used to explain the design decisions. They should not be used to explain the coding style.
+    \item Comments should be used to explain the assumptions. They should not be used to explain the requirements.
+    \item Comments should be used to explain the limitations. They should not be used to explain the features.
+    \item Comments should be used to explain the trade-offs. They should not be used to explain the benefits.
+\end{itemize}
+
+\subsection{Utilize Destructuring to Get Props}
+\begin{itemize}
+    \item Utilize destructuring to get props in functional components. This will help in making the code more readable and maintainable.
+    \item Destructuring allows you to extract multiple properties from an object and assign them to variables. This will help in reducing the amount of code needed to access the properties of an object.
+    \item Destructuring can be used to get props in functional components. This will help in making the code more readable and maintainable.
+    \item Destructuring can be used to get props in class components. This will help in making the code more readable and maintainable.
+    \item 
+\end{itemize}
+
+\subsection{Make use of PropTypes for Type Checking and to Prevent Errors}
+\begin{itemize}
+    \item Utilization of PropTypes will help with type checking for the props that are passed to a component which helps preventing bugs. They ensure that correct datatype is passed for each prop.
+    \item Ensures that a value is passed, set default values, and acts as a validator to make sure that components receive valid data.
+    \item 
+\end{itemize}
+\subsection{Rules regarding imports}
+\begin{itemize}
+    \item Import statements should be sorted alphabetically. This will help in making the codebase more organized and easier to read.
+    \item Import statements should be grouped by type. This will help in making the codebase more organized and easier to read.
+    \item Import statements should be placed at the top of the file. This will help in making the codebase more organized and easier to read.
+    \item Import statements should be used to import only the necessary modules. This will help in reducing the size of the codebase and make it easier to understand.
+    \item Do not rename imports when it is not necessary. This will help in making the codebase more consistent and easier to read.
+    \item Utilization of relative paths and not absolute paths for importing modules. This will help in making the codebase more organized and easier to read.
+\end{itemize}
+\subsection{Use of CSS Modules}
+\begin{itemsize}
+    \item We are using TailwindCSS for styling the components. This will help in writing less CSS and make it easier to style the components.
+    \item Utilize TailwindCSS Modules to scope the styles to a specific component. This will help in avoiding naming conflicts and make it easier to maintain the styles.
+    \item Use TailwindCSS Modules to import styles in the component. This will help in making the codebase more organized and easier to read.
+    \item Utilize TailwindCSS Modules to define styles in the component. This will help in making the codebase more organized and easier to read.
+    \item Do not import modules that are not used in the component. This will help in reducing the size of the codebase and make it easier to understand.
+\end{itemsize}
+
+\subsection{Rules regarding exports}
+\begin{itemsize}
+\item Export statements should be placed at the bottom of the file. This will help in making the codebase more organized and easier to read.
+\item Export statements should be used to export only the necessary modules. This will help in reducing the size of the codebase and make it easier to understand.
+\item Do not rename exports when it is not necessary. This will help in making the codebase more consistent and easier to read.
+\item Utilize default exports for components that are exported as the default export. This will help in making the codebase more organized and easier to read.
+\end{itemsize}
+\section{Backend}
+\subsection*{Utilization of version control and branching}
+\begin{itemize}
+    \item Utilize version control systems like Git to manage the codebase. This will help in tracking changes to the codebase and make it easier to collaborate with other developers.
+    \item Create branches for new features or bug fixes. This will help in isolating changes and make it easier to merge them back into the main codebase.
+    \item Use feature branches to develop new features or bug fixes. This will help in isolating changes and make it easier to merge them back into the main codebase.
+    \item Use release branches to prepare for a new release. This will help in stabilizing the codebase and make it easier to deploy the new release.
+    \item Use hotfix branches to fix critical bugs in the codebase. This will help in addressing issues quickly and make it easier to deploy the fix.
+    \item 
+\end{itemize}
+\subsection*{Refactor your code and remove dead code}
+\begin{itemize}
+    \item Refactoring code is the process of restructuring existing computer code without changing its external behavior. This is done to improve nonfunctional attributes of the software. This will help in improving the readability and maintainability of the code.
+    \item Dead code is code that is never executed in the program. This code should be removed as it can cause confusion and make the code harder to read.
+    \item Refactor code to make it more readable and maintainable. This will help in reducing the complexity of the code and make it easier to understand.
+    \item Remove dead code to make the codebase cleaner and easier to maintain. This will help in reducing the size of the codebase and make it easier to understand.
+    \item Refactor code to make it more efficient and reduce the number of bugs. This will help in improving the performance of the code and make it more reliable.
+    \item Refactor code to make it more testable and reduce the number of bugs. This will help in improving the quality of the code and make it easier to test.
+    \item Dead code is code that is never executed in the program. This code should be removed as it can cause confusion and make the code harder to read.
+\end{itemize}
+\subsection*{Write Unit Tests and Integration Tests which should run regularly}
+\begin{itemsize}
+    \item Unit tests are tests that validate the behavior of individual components or functions in the codebase. This will help in ensuring that each component or function works as expected.
+    \item Integration tests are tests that validate the behavior of multiple components or functions working together. This will help in ensuring that the codebase works as expected as a whole.
+    \item Write unit tests and integration tests to validate the behavior of the codebase. This will help in ensuring that the codebase works as expected and reduce the number of bugs.
+    \item Run unit tests and integration tests regularly to ensure that the codebase works as expected. This will help in catching bugs early and make it easier to fix them.
+    \item Utilization of Jest for testing the codebase. This will help in writing and running tests for the codebase and make it easier to validate the behavior of the codebase.
+\subsection*{Use Linters and Code Formatters}
+\begin{itemize}
+    \item Linters are tools that analyze the codebase for potential errors or style violations. This will help in ensuring that the codebase is clean and follows best practices.
+    \item Code formatters are tools that automatically format the codebase according to a set of rules. This will help in ensuring that the codebase is consistent and easy to read.
+    \item Use linters and code formatters to analyze and format the codebase. This will help in ensuring that the codebase is clean and follows best practices.
+    \item Utilization of ESLint for analyzing the codebase. This will help in finding potential errors or style violations in the codebase and make it easier to fix them.
+    \item Utilization of Prettier for formatting the codebase. This will help in automatically formatting the codebase according to a set of rules and make it easier to read.
+\end{document}
